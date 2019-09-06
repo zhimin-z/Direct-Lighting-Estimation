@@ -1,0 +1,3 @@
+[submodule "include/glm"]
+	path = include/glm
+	url = https://medea.stwing.upenn.edu/a-staff/glm.git

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene>
+	<camera>
+		<target>0 0 0</target>
+		<eye>10 10 10</eye>
+		<worldUp>0 1 0</worldUp>
+		<fov>50</fov>
+		<width>400</width>
+		<height>400</height>
+	</camera>
+
+	<geometry type="square" name="Floor">
+		<transform>
+			<translate>0 0 0</translate>
+			<rotate>-90 0 0</rotate>
+			<scale>20 20 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Wall_L">
+		<transform>
+			<translate>-10 10 0</translate>
+			<rotate>0 90 0</rotate>
+			<scale>20 20 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Wall_U">
+		<transform>
+			<translate>0 10 -10</translate>
+			<scale>20 20 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="sphere" name="Light Source">
+		<transform>
+			<translate>0 5 10</translate>
+			<scale>0.5 0.5 0.5</scale>
+		</transform>
+		<material>emissive_material</material>
+	</geometry>
+
+	<geometry type="square" name="Stained_Glass_1">
+		<transform>
+			<translate>-2 2.5 5</translate>
+			<rotate>0 0 0</rotate>
+			<scale>5 5 1</scale>
+		</transform>
+		<material>textured_glass</material>
+	</geometry>
+
+	<geometry type="square" name="Stained_Glass_2">
+		<transform>
+			<translate>2 2.5 7</translate>
+			<rotate>0 0 0</rotate>
+			<scale>5 5 1</scale>
+		</transform>
+		<material>colored_glass</material>
+	</geometry>
+
+	<material type="lambert" name="white_diffuse">
+		<baseColor>1 1 1</baseColor>
+	</material>
+
+	<material type="lambert" name="red_diffuse">
+		<baseColor>1 0 0</baseColor>
+	</material>
+
+	<material type="lambert" name="green_diffuse">
+		<baseColor>0 1 0</baseColor>
+	</material>
+
+	<material type="lambert" name="yellow_textured">
+		<baseColor>1 1 0.25</baseColor>
+		<texture>tex_nor_maps/178.jpg</texture>
+		<normalMap>tex_nor_maps/178_norm.jpg</normalMap>
+	</material>
+
+	<material type="lambert" name="textured_glass">
+		<baseColor>1 1 1</baseColor>
+		<iorIn>1</iorIn>
+		<iorOut>1</iorOut>
+		<texture>tex_nor_maps/171.jpg</texture>
+	</material>
+
+	<material type="lambert" name="colored_glass">
+		<baseColor>0.5 1 0.5</baseColor>
+		<iorIn>1</iorIn>
+		<iorOut>1</iorOut>
+	</material>
+
+	<material type="lambert" name="textured_diffuse">
+		<baseColor>1 1 1</baseColor>
+		<texture>tex_nor_maps/165.jpg</texture>
+		<normalMap>tex_nor_maps/165_norm.jpg</normalMap>
+	</material>
+
+	<material type="lambert" name="emissive_material">
+		<baseColor>1 1 1</baseColor>
+		<emissive>true</emissive>
+	</material>
+
+	<integrator type="raytrace">
+		<maxDepth>5</maxDepth>
+	</integrator>
+</scene>

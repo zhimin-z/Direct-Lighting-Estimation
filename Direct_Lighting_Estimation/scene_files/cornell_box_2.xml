@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene>
+	<camera>
+		<target>0 0 0</target>
+		<eye>0 0.5 12</eye>
+		<worldUp>0 1 0</worldUp>
+		<fov>50</fov>
+		<width>400</width>
+		<height>400</height>
+	</camera>
+
+	<geometry type="square" name="Back Wall">
+		<transform>
+			<translate>0 0 -5</translate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Right Wall">
+		<transform>
+			<translate>5 0 0</translate>
+			<rotate>0 -90 0</rotate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>green_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Left Wall">
+		<transform>
+			<translate>-5 0 0</translate>
+			<rotate>0 90 0</rotate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>red_diffuse</material>=
+	</geometry>
+
+	<geometry type="square" name="Ceiling">
+		<transform>
+			<translate>0 5 0</translate>
+			<rotate>90 0 0</rotate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Floor">
+		<transform>
+			<translate>0 -5 0</translate>
+			<rotate>-90 0 0</rotate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="sphere" name="Shiny Sphere">
+		<transform>
+			<translate>0 -3 -5</translate>
+		</transform>
+		<material>grey_specular</material>
+	</geometry>
+
+	<geometry type="sphere" name="Light Source">
+		<transform>
+			<translate>0 3 0</translate>
+			<scale>0.5 0.5 0.5</scale>
+		</transform>
+		<material>emissive_material</material>
+	</geometry>
+
+	<material type="lambert" name="white_diffuse">
+		<baseColor>1 1 1</baseColor>
+	</material>
+
+	<material type="lambert" name="red_diffuse">
+		<baseColor>1 0 0</baseColor>
+	</material>
+
+	<material type="lambert" name="green_diffuse">
+		<baseColor>0 1 0</baseColor>
+	</material>
+
+	<material type="phong" name="grey_specular" specularPower="10" specularColor="1 0 0">
+		<baseColor>0.5 0.5 0.5</baseColor>
+	</material>
+
+	<material type="lambert" name="emissive_material">
+		<baseColor>1 1 1</baseColor>
+		<emissive>true</emissive>
+	</material>
+
+	<integrator type="raytrace">
+		<maxDepth>5</maxDepth>
+	</integrator>
+</scene>

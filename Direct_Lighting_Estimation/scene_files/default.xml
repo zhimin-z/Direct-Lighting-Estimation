@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene>
+	<camera>
+		<target>0 0 0</target>
+		<eye>0 0 10</eye>
+		<worldUp>0 1 0</worldUp>
+		<fov>45</fov>
+		<width>400</width>
+		<height>400</height>
+	</camera>
+
+	<geometry type="cube" name="Cube">
+		<transform>
+			<translate>1 0 0</translate>
+			<rotate>0 0 45</rotate>
+			<scale>1 1 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="sphere" name="Sphere">
+		<transform>
+			<translate>-1 1 0</translate>
+			<rotate>0 0 0</rotate>
+			<scale>1 2 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<material type="lambert" name="white_diffuse">
+		<baseColor>1 1 1</baseColor>
+	</material>
+
+	<integrator>
+		<maxDepth>5</maxDepth>
+	</integrator>
+
+	<pixelSampler type="uniform">
+		<samples>1</samples>
+	</pixelSampler>
+</scene>

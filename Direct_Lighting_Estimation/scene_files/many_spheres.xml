@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene>
+	<camera>
+		<target>0 0 0</target>
+		<eye>0 0.5 12</eye>
+		<worldUp>0 1 0</worldUp>
+		<fov>50</fov>
+		<width>400</width>
+		<height>400</height>
+	</camera>
+
+	<geometry type="square" name="Back Wall">
+		<transform>
+			<translate>0 0 -5</translate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>textured_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Right Wall">
+		<transform>
+			<translate>5 0 0</translate>
+			<rotate>0 -90 0</rotate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>green_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Left Wall">
+		<transform>
+			<translate>-5 0 0</translate>
+			<rotate>0 90 0</rotate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>red_diffuse</material>=
+	</geometry>
+
+	<geometry type="square" name="Ceiling">
+		<transform>
+			<translate>0 5 0</translate>
+			<rotate>90 0 0</rotate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Floor">
+		<transform>
+			<translate>0 -5 0</translate>
+			<rotate>-90 0 0</rotate>
+			<scale>10 10 1</scale>
+		</transform>
+		<material>white_diffuse</material>
+	</geometry>
+
+	<geometry type="sphere" name="Shiny Sphere">
+		<transform>
+			<translate>-2 -5 0</translate>
+			<scale>5 5 5</scale>
+		</transform>
+		<material>purple_specular</material>
+	</geometry>
+
+	<geometry type="sphere" name="Transparent Sphere">
+		<transform>
+			<translate>-3 0 2</translate>
+			<scale>4 4 4</scale>
+		</transform>
+		<material>refractive_specular</material>
+	</geometry>
+
+	<geometry type="sphere" name="Reflective Sphere 1">
+		<transform>
+			<translate>3 -2 -3</translate>
+			<scale>4 4 4</scale>
+		</transform>
+		<material>mirrored_specular</material>
+	</geometry>
+
+	<geometry type="sphere" name="Reflective Sphere 2">
+		<transform>
+			<translate>-3 3.5 -3</translate>
+			<scale>3 3 3</scale>
+		</transform>
+		<material>mirrored_specular2</material>
+	</geometry>
+
+	<geometry type="sphere" name="Yellow Sphere">
+		<transform>
+			<translate>0 0 0</translate>
+			<scale>2 2 2</scale>
+		</transform>
+		<material>yellow_diffuse</material>
+	</geometry>
+
+	<geometry type="sphere" name="Light Source">
+		<transform>
+			<translate>0 4 5</translate>
+			<scale>0.5 0.5 0.5</scale>
+		</transform>
+		<material>emissive_material</material>
+	</geometry>
+
+	<material type="lambert" name="white_diffuse">
+		<baseColor>1 1 1</baseColor>
+	</material>
+
+	<material type="lambert" name="red_diffuse">
+		<baseColor>1 0 0</baseColor>
+	</material>
+
+	<material type="lambert" name="green_diffuse">
+		<baseColor>0 1 0</baseColor>
+	</material>
+
+	<material type="lambert" name="yellow_diffuse">
+		<baseColor>1 1 0.25</baseColor>
+	</material>
+
+	<material type="phong" name="mirrored_specular" specularPower="10" specularColor="1 1 1">
+		<baseColor>1 1 1</baseColor>
+		<reflectivity>1</reflectivity>
+	</material>
+
+	<material type="phong" name="mirrored_specular2" specularPower="10" specularColor="1 0 1">
+		<baseColor>0.25 0.5 1</baseColor>
+		<reflectivity>1</reflectivity>
+	</material>
+
+	<material type="phong" name="refractive_specular" specularPower="10" specularColor="1 1 1">
+		<baseColor>1 1 1</baseColor>
+		<iorIn>2.5</iorIn>
+		<iorOut>1</iorOut>
+	</material>
+
+	<material type="lambert" name="textured_diffuse">
+		<baseColor>1 1 1</baseColor>
+		<texture>tex_nor_maps/165.jpg</texture>
+		<normalMap>tex_nor_maps/165_norm.jpg</normalMap>
+	</material>
+
+	<material type="lambert" name="purple_specular">
+		<baseColor>1 1 1</baseColor>
+		<texture>tex_nor_maps/165.jpg</texture>
+		<normalMap>tex_nor_maps/165_norm.jpg</normalMap>
+	</material>
+
+	<material type="lambert" name="emissive_material">
+		<baseColor>1 1 1</baseColor>
+		<emissive>true</emissive>
+	</material>
+
+	<integrator type="raytrace">
+		<maxDepth>5</maxDepth>
+	</integrator>
+
+</scene>

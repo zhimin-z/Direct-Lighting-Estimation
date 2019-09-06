@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene>
+	<camera>
+		<target>0 0 0</target>
+		<eye>0 0.5 12</eye>
+		<worldUp>0 1 0</worldUp>
+		<fov>50</fov>
+		<width>400</width>
+		<height>400</height>
+	</camera>
+
+	<geometry type="obj" name="OBJ Mesh">
+		<filename>dodecahedron.obj</filename>
+		<transform>
+			<translate>0 0 0</translate>
+			<rotate>0 0 0</rotate>
+			<scale>1 1 1</scale>
+		</transform>
+		<material>grey_diffuse</material>
+	</geometry>
+
+	<material type="lambert" name="grey_diffuse">
+		<baseColor>1 1 1</baseColor>
+	</material>
+
+	<integrator>
+		<maxDepth>5</maxDepth>
+	</integrator>
+
+	<pixelSampler type="uniform">
+		<samples>1</samples>
+	</pixelSampler>
+</scene>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene>
+	<camera>
+		<target>0 0 0</target>
+		<eye>0 0.5 5</eye>
+		<worldUp>0 1 0</worldUp>
+		<fov>50</fov>
+		<width>400</width>
+		<height>400</height>
+	</camera>
+
+	<geometry type="sphere" name="Light Source">
+		<transform>
+			<translate>0 4 5</translate>
+			<scale>0.5 0.5 0.5</scale>
+		</transform>
+		<material>emissive_material</material>
+	</geometry>
+
+	<geometry type="sphere" name="Sphere">
+		<transform>
+			<translate>-1.5 0 0</translate>
+			<scale>1 1 1</scale>
+		</transform>
+		<material>textured_diffuse</material>
+	</geometry>
+
+	<geometry type="square" name="Square">
+		<transform>
+			<translate>-0.5 0 0</translate>
+			<scale>1 1 1</scale>
+		</transform>
+		<material>textured_diffuse</material>
+	</geometry>
+
+	<geometry type="cube" name="Cube">
+		<transform>
+			<translate>0.5 1 0</translate>
+			<rotate>90</rotate>
+			<scale>1 1 1</scale>
+		</transform>
+		<material>textured_diffuse</material>
+	</geometry>
+
+	<geometry type="cube" name="Cube2">
+		<transform>
+			<translate>0.5 -1 0</translate>
+			<rotate>0 45 0</rotate>
+			<scale>1 1 1</scale>
+		</transform>
+		<material>textured_diffuse</material>
+	</geometry>
+
+	<geometry type="obj" name="OBJ">
+		<filename>triangle.obj</filename>
+		<transform>
+			<translate>1.5 0 0</translate>
+			<scale>1 1 1</scale>
+		</transform>
+		<material>textured_diffuse</material>
+	</geometry>
+
+	<material type="lambert" name="textured_diffuse">
+		<baseColor>1 1 1</baseColor>
+		<texture>tex_nor_maps/154.jpg</texture>
+		<normalMap>tex_nor_maps/154_norm.jpg</normalMap>
+	</material>
+
+	<material type="lambert" name="emissive_material">
+		<baseColor>1 1 1</baseColor>
+		<emissive>true</emissive>
+	</material>
+
+	<integrator type="raytrace">
+		<maxDepth>5</maxDepth>
+	</integrator>
+</scene>
